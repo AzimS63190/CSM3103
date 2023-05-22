@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    p {
+      padding: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Paragraph Color</h1>
+  
+  <p id="myParagraph" onclick="changeColor('yellow')" ondblclick="changeColor('blue')" onmouseover="changeColor('red')" onmouseout="changeColor('green')">Click or hover over me!</p>
+  
+  <script>
+    function changeColor(color) {
+      var paragraph = document.getElementById('myParagraph');
+      paragraph.style.backgroundColor = color;
+    }
+  </script>
+</body>
+</html>

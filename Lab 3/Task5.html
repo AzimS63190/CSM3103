@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Records Table</h1>
+  
+  <table id="recordsTable">
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>Ahmad Faisal</td>
+      <td>ahmadfaisal@gmail.com</td>
+      <td>0199088888</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Ismail Sabri</td>
+      <td>isabri@mail.com</td>
+      <td>0199076760</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Fateh Yakin</td>
+      <td>ffateh@hotmail.com</td>
+      <td>0176067762</td>
+    </tr>
+  </table>
+
+  <button onclick="addRecord()">Add Record</button>
+
+  <script>
+    // Get the table reference
+    var table = document.getElementById('recordsTable');
+
+    // Add the table header
+    var headerRow = table.insertRow(0);
+    var headers = ['#', 'Name', 'Email', 'Phone'];
+
+    for (var i = 0; i < headers.length; i++) {
+      var headerCell = document.createElement('th');
+      headerCell.textContent = headers[i];
+      headerRow.appendChild(headerCell);
+    }
+
+    // Add a new record to the table
+    function addRecord() {
+      var newRow = table.insertRow(-1);
+      var data = ['Mukhriz Jamil Asoka', 'mukriz@corp.jo', '651181187223'];
+
+      for (var i = 0; i < data.length; i++) {
+        var cell = newRow.insertCell(i);
+        cell.textContent = data[i];
+      }
+
+      // Attach click event listener to delete row
+      newRow.addEventListener('click', function() {
+        table.deleteRow(this.rowIndex);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .highlight {
+      border: 2px solid red;
+    }
+    .enlarge {
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Text Field Effects</h1>
+  
+  <input type="text" id="myTextField" onchange="applyEffect(this)" onfocus="applyEffect(this)" onblur="applyEffect(this)">
+  
+  <script>
+    function applyEffect(element) {
+      element.classList.toggle('highlight');
+      element.classList.toggle('enlarge');
+    }
+  </script>
+</body>
+</html>
